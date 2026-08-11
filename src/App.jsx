@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { 
   MessageCircle, Phone, Mail, MapPin, Calendar, Clock, Sparkles, 
-  ChevronRight, Star, Heart, CheckCircle2, Menu, X, Award, ShieldCheck, Filter
+  ChevronRight, Star, Heart, CheckCircle2, Menu, X, Award, ShieldCheck
 } from 'lucide-react';
 import { LogoEmblem } from './components/LogoEmblem';
 import { BeforeAfterSlider } from './components/BeforeAfterSlider';
 import { GalleryLightbox } from './components/GalleryLightbox';
+
+// Camera Icon Helper
+function CameraIcon({ size = 20, color = "#C89B6E" }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+      <circle cx="12" cy="13" r="3"/>
+    </svg>
+  );
+}
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +58,7 @@ export default function App() {
       title: 'Bridal Makeup',
       tag: 'HD / Airbrush',
       desc: 'Bespoke HD or Airbrush bridal transformation for your D-Day, Engagement, Reception, or Sangeet. Includes hair styling, saree/lehenga draping & eyelashes.',
-      img: '/hero_bridal.jpg',
+      img: 'hero_bridal.jpg',
       icon: Sparkles
     },
     {
@@ -56,7 +66,7 @@ export default function App() {
       title: 'Party & Cocktail Makeup',
       tag: 'Evening Glam',
       desc: 'Chic, radiant makeup with sleek eye glam and glowing skin finish tailored for wedding guests, cocktail parties, and formal galas.',
-      img: '/party_glam.jpg',
+      img: 'party_glam.jpg',
       icon: Heart
     },
     {
@@ -64,7 +74,7 @@ export default function App() {
       title: 'Editorial & Photoshoot Makeup',
       tag: 'Fashion & High Concept',
       desc: 'Camera-optimized precision artistry designed for magazine editorials, fashion campaigns, and creative concept photoshoots.',
-      img: '/bridal_glam.jpg',
+      img: 'bridal_glam.jpg',
       icon: Award
     },
     {
@@ -72,7 +82,7 @@ export default function App() {
       title: 'Pre-Wedding Shoot Makeup',
       tag: 'Outdoor & Studio',
       desc: 'Long-lasting, sweat-proof glam crafted specifically to look breathtaking under natural outdoor lighting and professional camera lenses.',
-      img: '/hero_bridal.jpg',
+      img: 'hero_bridal.jpg',
       icon: CameraIcon
     },
     {
@@ -80,7 +90,7 @@ export default function App() {
       title: 'Groom Makeup & Grooming',
       tag: 'Subtle & Camera-Ready',
       desc: 'Subtle skin evening, dark-circle correction, anti-shine finish, and beard grooming so the groom looks impeccably handsome next to his bride.',
-      img: '/artist_portrait.jpg',
+      img: 'artist_portrait.jpg',
       icon: ShieldCheck
     },
     {
@@ -88,7 +98,7 @@ export default function App() {
       title: 'Family & Guest Makeup',
       tag: 'Group Packages',
       desc: 'Coordinated glam for mothers, sisters, and bridesmaids, ensuring every family member looks radiant and harmonized in photos.',
-      img: '/party_glam.jpg',
+      img: 'party_glam.jpg',
       icon: Sparkles
     },
     {
@@ -96,7 +106,7 @@ export default function App() {
       title: 'Baby Shower Makeup',
       tag: 'Traditional & Modern',
       desc: 'Soft, luminous beauty styling to celebrate your maternal milestone with comfort and elegance during traditional ceremony rituals.',
-      img: '/hero_bridal.jpg',
+      img: 'hero_bridal.jpg',
       icon: Heart
     },
     {
@@ -104,7 +114,7 @@ export default function App() {
       title: 'Maternity Shoot Makeup',
       tag: 'Soft & Ethereal',
       desc: 'Gentle peach and rose tones highlighting your natural pregnancy glow for dreamy, timeless portrait memories.',
-      img: '/bridal_glam.jpg',
+      img: 'bridal_glam.jpg',
       icon: Sparkles
     },
     {
@@ -112,7 +122,7 @@ export default function App() {
       title: 'Hairstyling',
       tag: 'Custom Buns & Waves',
       desc: 'Intricate bridal braids, hollywood glam waves, floral jasmine buns, and contemporary hair accessory installations.',
-      img: '/artist_portrait.jpg',
+      img: 'artist_portrait.jpg',
       icon: Sparkles
     },
     {
@@ -120,7 +130,7 @@ export default function App() {
       title: 'Saree Draping',
       tag: 'All Regional Styles',
       desc: 'Precision traditional & designer draping (Nauvari, Can-Can, Pleated, Gujrati) secured to remain comfortable and flawless all day.',
-      img: '/hero_bridal.jpg',
+      img: 'hero_bridal.jpg',
       icon: CheckCircle2
     },
     {
@@ -128,19 +138,19 @@ export default function App() {
       title: 'Nail Art & Extensions',
       tag: 'Bridal Extensions',
       desc: 'Luxury gel overlays, rose-gold accents, crystal embellishments, and classic French tips to complement your bridal henna.',
-      img: '/party_glam.jpg',
+      img: 'party_glam.jpg',
       icon: Sparkles
     }
   ];
 
   // Portfolio Gallery Items
   const portfolioItems = [
-    { id: 1, title: 'Royal Heritage HD Bridal', category: 'Bridal', url: '/hero_bridal.jpg', desc: 'Custom rose-gold blush skin with traditional Kundan headpiece and soft smoked eyeliner.' },
-    { id: 2, title: 'Luminous Reception Glam', category: 'Bridal', url: '/bridal_glam.jpg', desc: 'Airbrush finish with defined gold shimmer lid and nude velvet lips.' },
-    { id: 3, title: 'Sangeet Night Cocktail Glam', category: 'Party', url: '/party_glam.jpg', desc: 'Glossy nude skin paired with emerald cocktail gown styling.' },
-    { id: 4, title: 'International Editorial Look', category: 'Editorial', url: '/artist_portrait.jpg', desc: 'High fashion portrait look created for luxury bridal campaign.' },
-    { id: 5, title: 'Engagement Soft Rose Look', category: 'Bridal', url: '/hero_bridal.jpg', desc: 'Soft pastel pink tones for daytime engagement ceremony.' },
-    { id: 6, title: 'Maternity Glow Shoot', category: 'Maternity & Baby Shower', url: '/bridal_glam.jpg', desc: 'Soft ethereal makeup created for maternity portrait session.' }
+    { id: 1, title: 'Royal Heritage HD Bridal', category: 'Bridal', url: 'hero_bridal.jpg', desc: 'Custom rose-gold blush skin with traditional Kundan headpiece and soft smoked eyeliner.' },
+    { id: 2, title: 'Luminous Reception Glam', category: 'Bridal', url: 'bridal_glam.jpg', desc: 'Airbrush finish with defined gold shimmer lid and nude velvet lips.' },
+    { id: 3, title: 'Sangeet Night Cocktail Glam', category: 'Party', url: 'party_glam.jpg', desc: 'Glossy nude skin paired with emerald cocktail gown styling.' },
+    { id: 4, title: 'International Editorial Look', category: 'Editorial', url: 'artist_portrait.jpg', desc: 'High fashion portrait look created for luxury bridal campaign.' },
+    { id: 5, title: 'Engagement Soft Rose Look', category: 'Bridal', url: 'hero_bridal.jpg', desc: 'Soft pastel pink tones for daytime engagement ceremony.' },
+    { id: 6, title: 'Maternity Glow Shoot', category: 'Maternity & Baby Shower', url: 'bridal_glam.jpg', desc: 'Soft ethereal makeup created for maternity portrait session.' }
   ];
 
   const filteredPortfolio = selectedCategory === 'All' 
@@ -155,7 +165,7 @@ export default function App() {
           position: 'sticky',
           top: 0,
           zIndex: 100,
-          backgroundColor: 'rgba(251, 246, 240, 0.92)',
+          backgroundColor: 'rgba(251, 246, 240, 0.94)',
           backdropFilter: 'blur(12px)',
           borderBottom: '1px solid var(--color-border-gold)',
           boxShadow: 'var(--shadow-sm)'
@@ -212,7 +222,8 @@ export default function App() {
               padding: '1.25rem 1.5rem',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1rem'
+              gap: '1rem',
+              textAlign: 'left'
             }}
           >
             <a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
@@ -289,7 +300,7 @@ export default function App() {
             <div className="gold-circular-frame" style={{ maxWidth: '440px', width: '100%', padding: '12px' }}>
               <div className="gold-circular-frame-inner" style={{ aspectRatio: '4/5', borderRadius: '220px 220px 20px 20px' }}>
                 <img 
-                  src="/hero_bridal.jpg" 
+                  src="hero_bridal.jpg" 
                   alt="Pranaa's Makeover Bridal Artistry" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -312,7 +323,7 @@ export default function App() {
               <div className="gold-circular-frame" style={{ width: '280px', height: '280px', padding: '8px' }}>
                 <div className="gold-circular-frame-inner" style={{ width: '100%', height: '100%' }}>
                   <img 
-                    src="/artist_portrait.jpg" 
+                    src="artist_portrait.jpg" 
                     alt="Pranali Doye - International Makeup Artist" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
@@ -847,15 +858,5 @@ export default function App() {
         />
       )}
     </div>
-  );
-}
-
-// Camera Icon helper
-function CameraIcon({ size, color }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-      <circle cx="12" cy="13" r="3"/>
-    </svg>
   );
 }

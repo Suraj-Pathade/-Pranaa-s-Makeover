@@ -17,7 +17,9 @@ export const BeforeAfterSlider = () => {
   }, []);
 
   const onTouchMove = (e) => {
-    handleMove(e.touches[0].clientX);
+    if (e.touches && e.touches[0]) {
+      handleMove(e.touches[0].clientX);
+    }
   };
 
   const onMouseMove = (e) => {
@@ -41,7 +43,7 @@ export const BeforeAfterSlider = () => {
           position: 'relative',
           width: '100%',
           maxWidth: '850px',
-          height: '480px',
+          height: '450px',
           margin: '0 auto',
           borderRadius: 'var(--radius-lg)',
           overflow: 'hidden',
@@ -51,10 +53,10 @@ export const BeforeAfterSlider = () => {
           touchAction: 'pan-y'
         }}
       >
-        {/* AFTER IMAGE (Full width behind) */}
+        {/* AFTER IMAGE (Background) */}
         <div style={{ width: '100%', height: '100%', position: 'relative' }}>
           <img 
-            src="/bridal_glam.jpg" 
+            src="bridal_glam.jpg" 
             alt="After HD Bridal Makeup" 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
@@ -82,7 +84,7 @@ export const BeforeAfterSlider = () => {
           </div>
         </div>
 
-        {/* BEFORE IMAGE (Clipped on top) */}
+        {/* BEFORE IMAGE (Clipped on top using width %) */}
         <div 
           style={{ 
             position: 'absolute', 
@@ -95,10 +97,11 @@ export const BeforeAfterSlider = () => {
           }}
         >
           <img 
-            src="/hero_bridal.jpg" 
+            src="hero_bridal.jpg" 
             alt="Natural Before Look" 
             style={{ 
-              width: containerRef.current ? `${containerRef.current.getBoundingClientRect().width}px` : '850px', 
+              width: '850px',
+              maxWidth: 'none',
               height: '100%', 
               objectFit: 'cover',
               filter: 'contrast(0.95) saturate(0.9)'
@@ -117,7 +120,8 @@ export const BeforeAfterSlider = () => {
               fontWeight: '600',
               backdropFilter: 'blur(8px)',
               letterSpacing: '0.05em',
-              border: '1px solid var(--color-border-gold)'
+              border: '1px solid var(--color-border-gold)',
+              whiteSpace: 'nowrap'
             }}
           >
             BEFORE: NATURAL CANVAS
