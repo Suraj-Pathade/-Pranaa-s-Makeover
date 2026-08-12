@@ -148,7 +148,7 @@ export default function App() {
     { id: 1, title: 'Royal Heritage HD Bridal', category: 'Bridal', url: 'hero_bridal.jpg', desc: 'Custom rose-gold blush skin with traditional Kundan headpiece and soft smoked eyeliner.' },
     { id: 2, title: 'Luminous Reception Glam', category: 'Bridal', url: 'bridal_glam.jpg', desc: 'Airbrush finish with defined gold shimmer lid and nude velvet lips.' },
     { id: 3, title: 'Sangeet Night Cocktail Glam', category: 'Party', url: 'party_glam.jpg', desc: 'Glossy nude skin paired with emerald cocktail gown styling.' },
-    { id: 4, title: 'International Editorial Look', category: 'Editorial', url: 'artist_portrait.jpg', desc: 'High fashion portrait look created for luxury bridal campaign.' },
+    { id: 4, title: 'Masterclass Artistry by Pranali Doye', category: 'Editorial', url: 'pranali_doye.jpg', desc: 'Editorial portrait showcase by International Makeup Artist Pranali Doye.' },
     { id: 5, title: 'Engagement Soft Rose Look', category: 'Bridal', url: 'hero_bridal.jpg', desc: 'Soft pastel pink tones for daytime engagement ceremony.' },
     { id: 6, title: 'Maternity Glow Shoot', category: 'Maternity & Baby Shower', url: 'bridal_glam.jpg', desc: 'Soft ethereal makeup created for maternity portrait session.' }
   ];
@@ -319,13 +319,13 @@ export default function App() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
             {/* Artist Portrait */}
-            <div style={{ textAlign: 'center' }}>
-              <div className="gold-circular-frame" style={{ width: '280px', height: '280px', padding: '8px' }}>
-                <div className="gold-circular-frame-inner" style={{ width: '100%', height: '100%' }}>
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div className="gold-circular-frame" style={{ maxWidth: '340px', width: '100%', padding: '10px', boxShadow: 'var(--shadow-gold)' }}>
+                <div className="gold-circular-frame-inner" style={{ aspectRatio: '3/4', borderRadius: '160px 160px 20px 20px', overflow: 'hidden' }}>
                   <img 
-                    src="artist_portrait.jpg" 
+                    src="pranali_doye.jpg" 
                     alt="Pranali Doye - International Makeup Artist" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
                   />
                 </div>
               </div>
